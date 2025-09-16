@@ -1,0 +1,592 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Crimson Text', serif;
+    background: linear-gradient(135deg, #2c1810 0%, #3d2317 50%, #2c1810 100%);
+    color: #f5f5dc;
+    overflow: hidden;
+    height: 100vh;
+    position: relative;
+}
+
+/* Champagne Bubbles Animation */
+.bubbles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bubble {
+    position: absolute;
+    background: rgba(212, 175, 55, 0.15);
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.bubble-1 {
+    width: 8px;
+    height: 8px;
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 8s;
+}
+
+.bubble-2 {
+    width: 12px;
+    height: 12px;
+    left: 20%;
+    animation-delay: 1s;
+    animation-duration: 7s;
+}
+
+.bubble-3 {
+    width: 6px;
+    height: 6px;
+    left: 30%;
+    animation-delay: 2s;
+    animation-duration: 9s;
+}
+
+.bubble-4 {
+    width: 10px;
+    height: 10px;
+    left: 40%;
+    animation-delay: 3s;
+    animation-duration: 6s;
+}
+
+.bubble-5 {
+    width: 14px;
+    height: 14px;
+    left: 50%;
+    animation-delay: 4s;
+    animation-duration: 8s;
+}
+
+.bubble-6 {
+    width: 7px;
+    height: 7px;
+    left: 60%;
+    animation-delay: 5s;
+    animation-duration: 7s;
+}
+
+.bubble-7 {
+    width: 11px;
+    height: 11px;
+    left: 70%;
+    animation-delay: 1.5s;
+    animation-duration: 9s;
+}
+
+.bubble-8 {
+    width: 9px;
+    height: 9px;
+    left: 80%;
+    animation-delay: 2.5s;
+    animation-duration: 6s;
+}
+
+@keyframes float {
+    0% {
+        bottom: -50px;
+        opacity: 0;
+        transform: translateX(0) scale(0.5);
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        bottom: 100vh;
+        opacity: 0;
+        transform: translateX(20px) scale(1.2);
+    }
+}
+
+/* Main Container */
+.main-container {
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Card Styles */
+.card {
+    position: absolute;
+    width: 90%;
+    max-width: 400px;
+    background: linear-gradient(145deg, #4a2c1a 0%, #3d2317 50%, #2c1810 100%);
+    border: 2px solid #d4af37;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 
+                0 0 0 1px rgba(212, 175, 55, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.card.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.card-content {
+    position: relative;
+    z-index: 3;
+}
+
+/* Logo Styles */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.logo-arc {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #d4af37;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    transform: rotate(-2deg);
+    text-transform: uppercase;
+}
+
+.logo-martini {
+    font-size: 1.8rem;
+    margin: 5px 0;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.logo-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #d4af37;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 5px 0;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+}
+
+.logo-rocks {
+    font-size: 1.8rem;
+    margin: 5px 0;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* Typography */
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #d4af37;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #f5f5dc;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: #d4af37;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #d4af37;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.card-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #f5f5dc;
+    margin-bottom: 20px;
+}
+
+/* Step Styles */
+.step-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: #d4af37;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.step-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #f5f5dc;
+    text-align: left;
+}
+
+/* Icons */
+.wine-glass, .magnifying-glass, .music-note {
+    font-size: 3rem;
+    margin: 20px 0;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Call to Action */
+.cta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    color: #f5f5dc;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.cta-button {
+    background: linear-gradient(145deg, #d4af37 0%, #b8941f 100%);
+    color: #2c1810;
+    border: none;
+    padding: 15px 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    width: 100%;
+    max-width: 300px;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+    background: linear-gradient(145deg, #e6c547 0%, #d4af37 100%);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+/* Contact Section */
+.contact-container {
+    margin: 30px 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    padding: 10px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.contact-link:hover {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+}
+
+.contact-link:active {
+    transform: translateY(0);
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.contact-text {
+    font-size: 1.1rem;
+    color: #f5f5dc;
+}
+
+/* Social Media Links */
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #d4af37;
+    padding: 15px 20px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.social-link:hover {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+}
+
+.social-link:active {
+    transform: translateY(-1px);
+}
+
+.social-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.social-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Swipe Indicator */
+.swipe-indicator {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+    opacity: 0.7;
+    animation: bounce 2s infinite;
+}
+
+.swipe-arrow {
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 5px;
+}
+
+.swipe-indicator p {
+    font-size: 0.9rem;
+    color: #f5f5dc;
+    font-style: italic;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Hide swipe indicator when not on first card */
+.main-container:not([data-current-card="1"]) .swipe-indicator {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        width: 95%;
+        padding: 25px;
+    }
+    
+    .logo-arc {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+    
+    .logo-main {
+        font-size: 2.8rem;
+    }
+    
+    .logo-martini, .logo-rocks {
+        font-size: 1.5rem;
+    }
+    
+    .brand-name {
+        font-size: 2.8rem;
+    }
+    
+    .main-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .step-number {
+        font-size: 3rem;
+    }
+    
+    .cta-title {
+        font-size: 1.6rem;
+    }
+    
+    .social-container {
+        gap: 15px;
+    }
+    
+    .social-link {
+        min-width: 80px;
+        padding: 12px 15px;
+    }
+    
+    .social-icon {
+        font-size: 1.5rem;
+    }
+    
+    .social-text {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 20px;
+    }
+    
+    .logo-arc {
+        font-size: 0.9rem;
+        letter-spacing: 1.5px;
+    }
+    
+    .logo-main {
+        font-size: 2.2rem;
+    }
+    
+    .logo-martini, .logo-rocks {
+        font-size: 1.3rem;
+    }
+    
+    .brand-name {
+        font-size: 2.2rem;
+    }
+    
+    .main-title {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .step-number {
+        font-size: 2.5rem;
+    }
+    
+    .social-container {
+        gap: 10px;
+    }
+    
+    .social-link {
+        min-width: 70px;
+        padding: 10px 12px;
+    }
+    
+    .social-icon {
+        font-size: 1.3rem;
+    }
+    
+    .social-text {
+        font-size: 0.7rem;
+    }
+}
