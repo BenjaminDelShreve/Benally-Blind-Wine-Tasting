@@ -61,13 +61,6 @@ class WineTastingSwiper {
             }
         });
         
-        // Click events for CTA button
-        const ctaButton = document.querySelector('.cta-button');
-        if (ctaButton) {
-            ctaButton.addEventListener('click', () => {
-                this.handleCTAClick();
-            });
-        }
     }
     
     handleSwipe() {
@@ -159,25 +152,6 @@ class WineTastingSwiper {
         }
     }
     
-    handleCTAClick() {
-        // Add click animation
-        const button = document.querySelector('.cta-button');
-        if (button) {
-            button.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                button.style.transform = '';
-            }, 150);
-        }
-        
-        // Here you can add your booking logic
-        // For now, we'll just show an alert
-        alert('Booking functionality will be implemented here!\n\nThis could link to:\n- A booking form\n- Contact information\n- External booking system\n- Calendar integration');
-        
-        // Add haptic feedback
-        if ('vibrate' in navigator) {
-            navigator.vibrate([50, 50, 50]);
-        }
-    }
     
     // Public methods for external control
     getCurrentCard() {
